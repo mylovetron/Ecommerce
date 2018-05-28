@@ -4,3 +4,15 @@
 4.php artisan migrate
 
 -----------------------------------------------
+
+Now if you want to use phpMyAdmin in Laragon please follow below steps:
+
+Download latest phpMyAdmin zip from here
+Extract to path/to/laragon/etc/apps
+The folder name must be phpMyAdmin
+Restart Laragon and enjoy
+
+https://www.phpmyadmin.net/downloads/
+Laragon's Menu (Menu > MySQL > Reset and generate a random password for root)
+
+-------------------------------------------------------------------------------------
