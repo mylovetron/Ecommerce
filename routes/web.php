@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('test', function () {
-    return view('admin.master');
+    return view('admin.pages.cate_list');
 });
 
 Auth::routes();
