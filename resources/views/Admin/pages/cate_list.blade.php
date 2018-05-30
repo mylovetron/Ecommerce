@@ -1,5 +1,17 @@
 @extends('admin/master')
 @section('content')
+    
+    <!-- Day la phan page header
+    <div class="page-header">
+                    <h1>
+                        Tables
+                        <small>
+                            <i class="ace-icon fa fa-angle-double-right"></i>
+                            Static &amp; Dynamic Tables
+                        </small>
+                    </h1>
+    </div><!-- /.page-header -->
+
     <div class="row">
         <div class="col-xs-12">
             <table id="simple-table" class="table  table-bordered table-hover">

@@ -46,6 +46,7 @@
 
 <body class="no-skin">
 @include('admin.blocks.header')
+
 <div class="main-container ace-save-state" id="main-container">
     <script type="text/javascript">
         try{ace.settings.loadState('main-container')}catch(e){}
@@ -264,6 +265,8 @@
                         </ul>
                     </li>
                 </ul>
+
+
             </li>
 
             <li class="active open">
@@ -271,7 +274,7 @@
                     <i class="menu-icon fa fa-list"></i>
                     <span class="menu-text"> Tables </span>
 
-                    <b class="arrow fa fa-angle-down"></b>
+                    <b class="arrow Ffa fa-angle-down"></b>
                 </a>
 
                 <b class="arrow"></b>
@@ -636,15 +639,7 @@
                     </div><!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
 
-                <div class="page-header">
-                    <h1>
-                        Tables
-                        <small>
-                            <i class="ace-icon fa fa-angle-double-right"></i>
-                            Static &amp; Dynamic Tables
-                        </small>
-                    </h1>
-                </div><!-- /.page-header -->
+                
 
                 <div class="row">
                     <div class="col-xs-12">
@@ -659,7 +654,7 @@
         </div>
     </div><!-- /.main-content -->
 
-    @include('admin.blocks.footer')
+    <!-- @include('admin.blocks.footer') -->
 
     <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
         <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
