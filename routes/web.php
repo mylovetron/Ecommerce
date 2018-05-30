@@ -19,6 +19,13 @@ Route::get('test', function () {
     return view('admin.pages.cate_add');
 });
 
+Route::group(['prefix'=>'admin'],function (){
+    Route::group(['prefix'=>'cate'],function (){
+        Route::resource('cates','CateController');
+
+    });
+    
+});
 
 Auth::routes();
 

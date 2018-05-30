@@ -16,3 +16,4 @@ https://www.phpmyadmin.net/downloads/
 Laragon's Menu (Menu > MySQL > Reset and generate a random password for root)
 
 -------------------------------------------------------------------------------------
+php artisan make:model Cate
