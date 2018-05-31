@@ -5,47 +5,51 @@
 	<div class="col-xs-12">
 	<!-- PAGE CONTENT BEGINS -->
 		@include('admin.blocks.errors')
-		<form class="form-horizontal" action="{!! route('admin.cate.getAdd') !!}" method="POST">
+		<form class="form-horizontal" action="" method="POST">
 			<input type="hidden" name="_token" value="{!! csrf_token() !!}" />
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Category Parent</label>
 				<div class="col-sm-9">
 					<select name="sltParent" class="col-xs-10 col-sm-5">
                          <option value="0">Please Choose Category</option>
-                         <?php cate_parent($parent); ?>
+                         <?php  cate_parent($parent,0,"--",$data["parent_id"]) ?>
                      </select>
 				</div>
 			</div>	
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Category Name</label>
 				<div class="col-sm-9">
-					<input type="text" id="form-field-1"  name="txtCateName" placeholder="Username" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-1" value="{!!  old('txtCateName',isset($data) ? $data['name']:null ) !!}"  name="txtCateName" placeholder="Username" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Category Order</label>
 				<div class="col-sm-9">
-					<input type="text" id="form-field-1" name="txtOrder" placeholder="Order" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-1" name="txtOrder" placeholder="Order" class="col-xs-10 col-sm-5" value="{!!  old('txtOrder',isset($data) ? $data['order']:null ) !!}" />
 				</div>
 			</div>	
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Category Keywords</label>
 				<div class="col-sm-9">
-					<input type="text" id="form-field-1" name="txtKeywords" placeholder="Username" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-1" name="txtKeywords" placeholder="Username" class="col-xs-10 col-sm-5" value="{!!  old('txtKeywords',isset($data) ? $data['keywords']:null ) !!}" />
 				</div>
 			</div>	
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Category Description</label>
 				<div class="col-sm-9">
-					<textarea name="txtDescription" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-5" rows="3"></textarea>
+					<textarea name="txtDescription" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-5" rows="3">{!!  old('txtDescription',isset($data) ? $data['description']:null ) !!}</textarea>
 				</div>
 			</div>	
 			
+			<div class="wysiwyg-editor" id="editor1"></div>
+
+			<div class="hr hr-double dotted"></div>
+
 			<div class="clearfix form-actions">
 				<div class="col-md-offset-3 col-md-9">
 					<button class="btn btn-info" type="Submit">
 						<i class="ace-icon fa fa-check bigger-110"></i>
-							Submit
+							Category Edit
 					</button>
 
 						&nbsp; &nbsp; &nbsp;
