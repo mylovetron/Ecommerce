@@ -17,16 +17,18 @@
             <table id="simple-table" class="table  table-bordered table-hover">
                 <thead>
                 <tr>
+                    <!--
                     <th class="center">
                         <label class="pos-rel">
                             <input type="checkbox" class="ace" />
                             <span class="lbl"></span>
                         </label>
                     </th>
-                    <th class="detail-col">Details</th>
-                    <th>Name</th>
-                    <th>Category Parent</th>
-                    <th class="hidden-480">Status</th>
+                    -->
+                    <th class="detail-col">Chi tiết</th>
+                    <th>Tên</th>
+                    <th>Thuộc nhóm hàng</th>
+                    <th class="hidden-480">Tình trạng</th>
 
                     <th></th>
                 </tr>
@@ -35,13 +37,14 @@
                 <tbody>
                 @foreach($data as $item)  
                 <tr>
+                    <!--
                     <td class="center">
                         <label class="pos-rel">
                             <input type="checkbox" class="ace" />
                             <span class="lbl"></span>
                         </label>
                     </td>
-
+                    -->
                     <td class="center">
                         <div class="action-buttons">
                             <a href="#" class="green bigger-140 show-details-btn" title="Show Details">
