@@ -19,6 +19,7 @@ Laragon's Menu (Menu > MySQL > Reset and generate a random password for root)
 php artisan make:model Cate
 php artisan make:request CateRequest
 
+
 ----------------------------------------------------------
 thay doi lenh php composer.phar dump-autoload
 banh lenh composer update

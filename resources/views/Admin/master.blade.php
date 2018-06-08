@@ -42,6 +42,11 @@
     <script src="{{ url('admin/assets/js/respond.min.js') }}"></script>
 
     <![endif]-->
+
+    <!-- ckeditor -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/templateEditor/ckeditor/ckeditor.js"></script>
+
 </head>
 
 <body class="no-skin">
