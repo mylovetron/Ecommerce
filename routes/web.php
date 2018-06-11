@@ -38,6 +38,10 @@ Route::group(['prefix'=>'admin'],function (){
     
 });
 
+Route::get('/','WelcomeController@index');
+     
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('loai_san_pham/{id}/{tenloai}',['as'=>'loaisanpham','uses'=>'WelcomeController@loaisanpham']);
