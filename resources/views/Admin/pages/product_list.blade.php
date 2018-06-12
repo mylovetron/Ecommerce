@@ -84,7 +84,7 @@
                                 <i class="ace-icon fa fa-check bigger-120"></i>
                             </button>
 
-                            <a class="btn btn-xs btn-info" href="{!! URL::route('admin.cate.getEdit',$item['id']) !!}">
+                            <a class="btn btn-xs btn-info" href="{!! URL::route('admin.product.getEdit',$item['id']) !!}">
                                 <i class="ace-icon fa fa-pencil bigger-120"></i>
                             </a>
                             <a href="{!! URL::route('admin.product.getDelete',$item['id']) !!}" onclick="return confirm('Ban chac co muon xoa?')" class="btn btn-xs btn-danger" >

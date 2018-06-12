@@ -13,7 +13,7 @@
 					<select name="sltParent" class="col-xs-10 col-sm-5">
                          <option value="0">Please Choose Category</option>
                          <?php  cate_parent($parent,0,"--",$data["parent_id"]) ?>
-                     </select>
+                    </select>
 				</div>
 			</div>	
 			<div class="form-group">

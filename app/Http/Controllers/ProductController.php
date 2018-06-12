@@ -72,7 +72,9 @@ class ProductController extends Controller
      public  function getEdit($id){
         $cate=Cate::select('id','name','parent_id')->get()->toArray();
         $product = Product::find($id);
-        return view('admin.pages.cate_edit',compact('cate','product'));
+        $product_image=Product::find($id)->pimages;
+        return view('admin.pages.product_edit',compact('cate','product','product_image'));
+
     }
 
     public  function postEdit(Request $request,$id){
@@ -87,7 +89,6 @@ class ProductController extends Controller
         $cate->parent_id=$request->sltParent;
         $cate->keywords=$request->txtKeywords;
         $cate->description=$request->txtDescription;
-        //print_r($cate);
         $cate->save();
         return redirect()->route('admin.cate.getList')->with(['flash_level'=>'success','flash_message'=>'edit categoy success!']);
 
