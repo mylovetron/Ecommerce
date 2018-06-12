@@ -11,4 +11,17 @@ class Product extends Model
     protected  $fillable=['name','alias','price','intro','content','image','keywords','description'];
 
     public $timestamps=false;
+
+    public function cate(){
+        return $this->belongsTo('App\Cate');
+    }
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
+    public function pimages(){
+        return $this->hasMany('App\ProductImages');
+    }
 }
+

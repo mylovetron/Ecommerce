@@ -5,14 +5,14 @@
 	<div class="col-xs-12">
 	<!-- PAGE CONTENT BEGINS -->
 		@include('admin.blocks.errors')
-		<form class="form-horizontal" action="{!! route('admin.product.getAdd') !!}" method="POST" enctype="multipart/form-data">
+		<form class="form-horizontal" action="{!! route('admin.product.getEdit') !!}" method="POST" enctype="multipart/form-data">
 			<input type="hidden" name="_token" value="{!! csrf_token() !!}"   />
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Category Parent</label>
 				<div class="col-sm-9">
 					<select name="sltParent" class="col-xs-10 col-sm-5">
                          <option value="0">Please Choose Category</option>
-                         <?php  cate_parent($cate,0,"--",old('sltParent')); ?>
+                         <?php  cate_parent($cate,0,"--",$product["cate_id"]); ?>
                      </select>
 				</div>
 			</div>	
@@ -55,15 +55,6 @@
 					<input type="file" id="form-field-1" name="fImages" placeholder="Image" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>	
-
-			@for($i=1;$i<=3;$i++)
-			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Hình{!!$i!!}</label>
-				<div class="col-sm-9">
-					<input type="file" id="form-field-1" name="fProductDetail[]" placeholder="Image" class="col-xs-10 col-sm-5" />
-				</div>
-			</div>	
-			@endfor
 
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Product Keywords</label>

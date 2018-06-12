@@ -14,6 +14,7 @@
 
     <div class="row">
         <div class="col-xs-12">
+            <div>@include('admin.blocks.message')</div>
             <table id="simple-table" class="table  table-bordered table-hover">
                 <thead>
                 <tr>
@@ -86,7 +87,7 @@
                             <a class="btn btn-xs btn-info" href="{!! URL::route('admin.cate.getEdit',$item['id']) !!}">
                                 <i class="ace-icon fa fa-pencil bigger-120"></i>
                             </a>
-                            <a href="{!! URL::route('admin.cate.getDelete',$item['id']) !!}" onclick="return confirm('Ban chac co muon xoa?')" class="btn btn-xs btn-danger" >
+                            <a href="{!! URL::route('admin.product.getDelete',$item['id']) !!}" onclick="return confirm('Ban chac co muon xoa?')" class="btn btn-xs btn-danger" >
                                     <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                
                             </a>
