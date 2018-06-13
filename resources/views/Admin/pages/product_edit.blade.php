@@ -3,6 +3,7 @@
 <style>
 	.img_curent{width:150px;}
 	.img_detail{width:120px;}
+	.icon_del{position:relative;width:20px;height: 20px;top:-20px;left:50px;}
 </style>
 <div class="row">
 	<div class="col-xs-12">
@@ -64,16 +65,23 @@
 
 			@foreach($product_image as $item_product_image)
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Hình</label>
-				<div><img src="{!!asset('resources/upload/detail/'.$item_product_image['image'])!!}" class="img_detail" /></div>
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"></label>
+				<div>
+					<img src="{!!asset('resources/upload/detail/'.$item_product_image['image'])!!}" class="img_detail" />
+					<a id="del_img_demo" class="btn btn-danger btn-circle icon_del"><i class="fa fa-times"></i></a>
+				</div>
 			</div>	
 			
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"></label>
 				<div class="col-sm-9">
 					<input type="file" id="form-field-1" name="fProductDetail[]" placeholder="Image" class="col-xs-10 col-sm-5" />
+					<button type="button" class=class="col-xs-10 col-sm-5"  id="addImages">Add Image</button>
+					<div id="insert"></div>
 				</div>
+				
 			</div>
+			
 			@endforeach
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Product Keywords</label>

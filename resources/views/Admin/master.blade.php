@@ -931,5 +931,15 @@
 
     })
 </script>
+<script type="text/javascript">
+    $(document).ready(function(){
+      alert("Settings page was loaded");
+    });
+</script>
 </body>
+<!-- Myscript -->
+<script type="text/javascript" src="{{url('admin/assets/js/myscript.js')}}"></script>
+
+
+<!-- /Myscript -->
 </html>
