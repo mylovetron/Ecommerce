@@ -666,6 +666,10 @@
     </a>
 </div><!-- /.main-container -->
 
+
+</body>
+
+
 <!-- basic scripts -->
 
 <!--[if !IE]> -->
@@ -715,7 +719,7 @@
 
                     //"bProcessing": true,
                     //"bServerSide": true,
-                    //"sAjaxSource": "http://127.0.0.1/table.php"	,
+                    //"sAjaxSource": "http://127.0.0.1/table.php"   ,
 
                     //,
                     //"sScrollY": "200px",
@@ -920,26 +924,19 @@
          //add horizontal scrollbars to a simple table
          $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
          {
-					horizontal: true,
-					styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
-					size: 2000,
-					mouseWheelLock: true
-				  }
+                    horizontal: true,
+                    styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
+                    size: 2000,
+                    mouseWheelLock: true
+                  }
          ).css('padding-top', '12px');
          */
 
 
     })
 </script>
-<script type="text/javascript">
-    $(document).ready(function(){
-      alert("Settings page was loaded");
-    });
-</script>
-</body>
-<!-- Myscript -->
-<script type="text/javascript" src="{{url('admin/assets/js/myscript.js')}}"></script>
 
+<!-- Myscript -->
 
 <!-- /Myscript -->
 </html>

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 use App\Cate;
 use App\Product;
 use App\ProductImages;
 use Input,File;
+use Request;
 class ProductController extends Controller
 {
     public function getAdd(){
@@ -78,19 +79,37 @@ class ProductController extends Controller
     }
 
     public  function postEdit(Request $request,$id){
-        $this->validate($request,
-            ["txtCateName"=>"required"],
-            ["txtCateName.required"=>"Ban phai nhap CateLog Name"]
-        );
-        $cate=Cate::find($id);
-        $cate->name=$request->txtCateName ;
-        $cate->alias=changeTitle($request->txtCateName);
-        $cate->order=$request->txtOrder;
-        $cate->parent_id=$request->sltParent;
-        $cate->keywords=$request->txtKeywords;
-        $cate->description=$request->txtDescription;
-        $cate->save();
-        return redirect()->route('admin.cate.getList')->with(['flash_level'=>'success','flash_message'=>'edit categoy success!']);
+        //$this->validate($request,
+        //    ["txtCateName"=>"required"],
+        //    ["txtCateName.required"=>"Ban phai nhap CateLog Name"]
+        //);
+        $product=Product::find($id);
+        $product->name=Request::input('txtName') ;
+        $product->alias=changeTitle(Request::input('txtName'));
+        $product->price=Request::input('sltParent');
+        $product->intro=Request::input('txtIntro');
+        $product->content=Request::input('txtContent');
+        $product->keywords=Request::input('txtKeywords');
+        $product->description=Request::input('txtDescription');
+        $product->user_id=1;
+        $product->cate_id=Request::input('sltParent');
+        $product->save();
+        return redirect()->route('admin.product.getList')->with(['flash_level'=>'success','flash_message'=>'Cập nhật dữ liệu thành công!']);
 
+    }
+
+    public function getDelImg($id){
+        if(Request::ajax()){
+            $idHinh=(int)Request::get('idHinh');
+            $image=ProductImages::find($idHinh);
+            if(!empty($image)){
+                $img='resources/upload/detail/'.$image_detail->image;
+                if(File::exists($img)){
+                    File::delete($img);
+                }
+                $image_detail->delete();
+            }
+            return "oke";
+        }
     }
 }
