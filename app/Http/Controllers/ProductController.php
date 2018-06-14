@@ -83,6 +83,27 @@ class ProductController extends Controller
         //    ["txtCateName"=>"required"],
         //    ["txtCateName.required"=>"Ban phai nhap CateLog Name"]
         //);
+        print_r(Request::file('fEitDetail'));
+        if(!empty(Request::file('fEditDetail')))
+        //if(!empty(Request::file('fEditDetail')))
+        {
+
+            foreach (Request::file('fEditDetail') as $file) {
+                
+                if(isset($file)){
+                    echo "yese";
+                    //print_r($file);
+                }
+                else
+                    echo "nonono";
+            }
+            
+        }
+        else
+            echo "iii";
+die;
+
+
         $product=Product::find($id);
         $product->name=Request::input('txtName') ;
         $product->alias=changeTitle(Request::input('txtName'));
@@ -93,8 +114,45 @@ class ProductController extends Controller
         $product->description=Request::input('txtDescription');
         $product->user_id=1;
         $product->cate_id=Request::input('sltParent');
+        
+
+
+        $img_current='resources/upload/'.Request::input('img_current');
+
+        
+        if(!empty(Request::file('fImages')))
+        {
+            //Neu co file
+            $file_name=Request::file('fImages')->getClientOriginalName();
+            $product->image=$file_name;
+            Request::file('fImages')->move('resources/upload/',$file_name);
+            if(File::exists($img_current)){
+                File::delete($img_current);
+            }
+        }
+        else{
+            echo "Không có File";
+        }
+
+
         $product->save();
+        if(!empty(Request::file('fEitDetail'))){
+            foreach (Request::file('fEitDetail') as $file) {
+                $product_img=new ProductImages();
+                if(isset($file)){
+                    $product_img->image=$file->getClientOriginalName();
+                    $product_img->product_id=$id;
+                    $file->move('resources/upload/detail/',$file->getClientOriginalName());
+                    $product_img->save();
+                }
+            }
+            
+        }
+
+       
+
         return redirect()->route('admin.product.getList')->with(['flash_level'=>'success','flash_message'=>'Cập nhật dữ liệu thành công!']);
+        
 
     }
 

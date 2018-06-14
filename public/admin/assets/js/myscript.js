@@ -2,7 +2,7 @@ $("div.alert").delay(3000).slideUp();
 
 $(document).ready(function(){
 	$("#addImages").click(function(){
-		$("#insert").append('<div class="form-group"><div class="col-sm-9"><input type="file" id="form-field-1" name="fImages" class="col-xs-10 col-sm-5" /></div></div>');
+		$("#insert").append('<div class="form-group"><input type="file" name="fEitDetail[]" class="col-xs-10 col-sm-5" /></div>');
 	});
 });
 

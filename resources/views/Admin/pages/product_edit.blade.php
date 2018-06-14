@@ -1,7 +1,7 @@
 @extends('admin/master')
 @section('content')
 <style>
-	.img_curent{width:150px;}
+	.img_current{width:150px;}
 	.img_detail{width:150px;}
 	.icon_del{position:relative;width:50px;height: 50px;top:-20px;left:50px;}
 	#insert{margin-top:20px;}
@@ -55,7 +55,8 @@
 			</div>	
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Image Current</label>
-				<img src="{!!asset('resources/upload/'.$product['image'])!!}" class="img_curent" />
+				<img src="{!!asset('resources/upload/'.$product['image'])!!}" class="img_current" />
+				<input type="hidden" name="img_current" value="{!!$product['image']!!}">
 			</div>	
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Image</label>
