@@ -30,7 +30,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Price</label>
 				<div class="col-sm-9">
-					<input type="text" id="form-field-1" name="txtPrice"  value="{!!  old('txtPrice',isset($product) ? $product['price']:null ) !!}" placeholder="Please Enter Price" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-1" name="txtPrice"  value="{!! old('txtPrice',isset($product) ? $product['price']:null ) !!}" placeholder="Please Enter Price" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>	
 			<div class="form-group">
