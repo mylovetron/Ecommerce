@@ -30,7 +30,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1">Price</label>
 				<div class="col-sm-9">
-					<input type="text" id="form-field-1" name="txtPrice"  value="{!!  old('txtPrice',isset($product) ? $product['price']:null ) !!}" placeholder="Please Enter Price" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-1" name="txtPrice"  value="{!! old('txtPrice',isset($product) ? $product['price']:null ) !!}" placeholder="Please Enter Price" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>	
 			<div class="form-group">
@@ -69,7 +69,7 @@
 			<div class="form-group" id="{!! $key !!}">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"></label>
 				<div>
-					<img src="{!!asset('resources/upload/detail/'.$item_product_image['image'])!!}" class="img_detail" idHinh="hinh{!! $item_product_image['id'] !!}" id="{!! $key !!}"/>
+					<img src="{!!asset('resources/upload/detail/'.$item_product_image['image'])!!}" class="img_detail" idHinh="{!! $item_product_image['id'] !!}" id="{!! $key !!}"/>
 					<a href="javascript:void(0)" type="button" id="del_img_demo" class="btn btn-danger btn-circle icon_del"><i class="fa fa-times"></i></a>
 				</div>
 			</div>	

@@ -83,22 +83,28 @@ class ProductController extends Controller
         //    ["txtCateName"=>"required"],
         //    ["txtCateName.required"=>"Ban phai nhap CateLog Name"]
         //);
+<<<<<<< HEAD
        
+=======
+        
+>>>>>>> master
         $product=Product::find($id);
         $product->name=Request::input('txtName') ;
         $product->alias=changeTitle(Request::input('txtName'));
-        $product->price=Request::input('sltParent');
+        $product->price=Request::input('txtPrice');
         $product->intro=Request::input('txtIntro');
         $product->content=Request::input('txtContent');
         $product->keywords=Request::input('txtKeywords');
         $product->description=Request::input('txtDescription');
         $product->user_id=1;
         $product->cate_id=Request::input('sltParent');
+<<<<<<< HEAD
         
 
+=======
+>>>>>>> master
         $img_current='resources/upload/'.Request::input('img_current');
 
-        
         if(!empty(Request::file('fImages')))
         {
             //Neu co file
@@ -112,7 +118,10 @@ class ProductController extends Controller
         else{
             echo "Không có File";
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         $product->save();
         if(!empty(Request::file('fEitDetail'))){
             foreach (Request::file('fEitDetail') as $file) {
@@ -127,18 +136,27 @@ class ProductController extends Controller
             
         }
 
+<<<<<<< HEAD
         return redirect()->route('admin.product.getList')->with(['flash_level'=>'success','flash_message'=>'Cập nhật dữ liệu thành công!']);
         
 
+=======
+       return redirect()->route('admin.product.getList')->with(['flash_level'=>'success','flash_message'=>'Cập nhật dữ liệu thành công!']);
+>>>>>>> master
     }
 
     public function getDelImg($id){
         if(Request::ajax()){
             $idHinh=(int)Request::get('idHinh');
+<<<<<<< HEAD
             
             $image_detail=ProductImages::find($idHinh);
             echo $image_detail;
             if(!empty($image)){
+=======
+            $image_detail=ProductImages::find($idHinh);
+            if(!empty($image_detail)){
+>>>>>>> master
                 $img='resources/upload/detail/'.$image_detail->image;
                 $image_detail->delete($idHinh);
                 if(File::exists($img)){

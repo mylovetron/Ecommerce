@@ -41,8 +41,7 @@
 				</div>
 			</div>	
 			
-			<div class="wysiwyg-editor" id="editor1"></div>
-
+		
 			<div class="hr hr-double dotted"></div>
 
 			<div class="clearfix form-actions">
