@@ -83,27 +83,7 @@ class ProductController extends Controller
         //    ["txtCateName"=>"required"],
         //    ["txtCateName.required"=>"Ban phai nhap CateLog Name"]
         //);
-        print_r(Request::file('fEitDetail'));
-        if(!empty(Request::file('fEditDetail')))
-        //if(!empty(Request::file('fEditDetail')))
-        {
-
-            foreach (Request::file('fEditDetail') as $file) {
-                
-                if(isset($file)){
-                    echo "yese";
-                    //print_r($file);
-                }
-                else
-                    echo "nonono";
-            }
-            
-        }
-        else
-            echo "iii";
-die;
-
-
+       
         $product=Product::find($id);
         $product->name=Request::input('txtName') ;
         $product->alias=changeTitle(Request::input('txtName'));
@@ -115,7 +95,6 @@ die;
         $product->user_id=1;
         $product->cate_id=Request::input('sltParent');
         
-
 
         $img_current='resources/upload/'.Request::input('img_current');
 
@@ -134,7 +113,6 @@ die;
             echo "Không có File";
         }
 
-
         $product->save();
         if(!empty(Request::file('fEitDetail'))){
             foreach (Request::file('fEitDetail') as $file) {
@@ -149,8 +127,6 @@ die;
             
         }
 
-       
-
         return redirect()->route('admin.product.getList')->with(['flash_level'=>'success','flash_message'=>'Cập nhật dữ liệu thành công!']);
         
 
@@ -159,13 +135,17 @@ die;
     public function getDelImg($id){
         if(Request::ajax()){
             $idHinh=(int)Request::get('idHinh');
-            $image=ProductImages::find($idHinh);
+            
+            $image_detail=ProductImages::find($idHinh);
+            echo $image_detail;
             if(!empty($image)){
                 $img='resources/upload/detail/'.$image_detail->image;
+                $image_detail->delete($idHinh);
                 if(File::exists($img)){
                     File::delete($img);
                 }
-                $image_detail->delete();
+
+                
             }
             return "oke";
         }
