@@ -8,7 +8,9 @@ class WelcomeController extends Controller
 {
     public function index(){
     	$product =DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->skip(0)->take(4)->get();
-        return view('user.pages.products',compact('product'));
+        //return view('user.pages.products',compact('product'));
+        return view('user2.pages.index',compact('product'));
+        //return view('user2.test',compact('product'));
 
     }
 
