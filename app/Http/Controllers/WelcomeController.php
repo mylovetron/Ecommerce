@@ -23,4 +23,9 @@ class WelcomeController extends Controller
     	//print_r($menu_cate);
     	return view('user.pages.cate',compact('product_cate','menu_cate','cate'));
     }
+
+    public function chitietsanpham($id){
+       $product_detail=DB::table('products')->where('id',$id)->first();
+       return view('user2.pages.detail',compact('product_detail'));
+    }
 }
