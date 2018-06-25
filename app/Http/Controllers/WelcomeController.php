@@ -26,6 +26,8 @@ class WelcomeController extends Controller
 
     public function chitietsanpham($id){
        $product_detail=DB::table('products')->where('id',$id)->first();
-       return view('user2.pages.detail',compact('product_detail'));
+       $image=DB::table('product_images')->select('id','image')->where('product_id',$product_detail->id)->get();
+       $product_cate=DB::table('products')->where('cate_id',$product_detail->cate_id)->where('id','<>',$id)->take(3)->get();
+       return view('user2.pages.detail',compact('product_detail','image','product_cate'));
     }
 }
