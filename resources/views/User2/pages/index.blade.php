@@ -19,22 +19,23 @@
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
-                                            <a href="detail.html">
+                                            <a href="{!!url('chi-tiet-san-pham',[$item->id])!!}">
                                                 <img src="{!!asset('resources/upload/'.$item->image)!!}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="back">
-                                            <a href="detail.html">
-                                                <img src="{!!asset('resources/upload/'.$item->image)!!}" alt="" class="img-responsive">
+                                            <a href="{!!url('chi-tiet-san-pham',[$item->id])!!}">
+                                                {!!$item->intro!!} 
+                                                
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="detail.html" class="invisible">
+                                <a href="{!!url('chi-tiet-san-pham',[$item->id])!!}" class="invisible">
                                     <img src="{{url('user/obaju/img/product1.jpg')}}" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">{!!$item->name!!}</a></h3>
+                                    <h3><a href="{!!url('chi-tiet-san-pham',[$item->id])!!}">{!!$item->name!!}</a></h3>
                                     <p class="price">{!!number_format($item->price,0,',','.')!!} VND</p>
                                 </div>
                                 <!-- /.text -->
@@ -65,22 +66,22 @@
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
-                                            <a href="{!!url('chi-tiet-san-pham',[$item->id,$item->alias])!!}">
+                                            <a href="{!!url('chi-tiet-san-pham',[$item->id])!!}">
                                                 <img src="{!!asset('resources/upload/'.$item->image)!!}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="back">
-                                            <a href="{!!url('chi-tiet-san-pham',[$item->id,$item->alias])!!}">
-                                                <img src="{!!asset('resources/upload/'.$item->image)!!}" alt="" class="img-responsive">
+                                            <a href="{!!url('chi-tiet-san-pham',[$item->id])!!}">
+                                                <img src="{!!asset('resources/upload/thongso.jpg')!!}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{!!url('chi-tiet-san-pham',[$item->id,$item->alias])!!}" class="invisible">
+                                <a href="{!!url('chi-tiet-san-pham',[$item->id])!!}" class="invisible">
                                     <img src="{{url('user/obaju/img/product1.jpg')}}" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">{!!$item->name!!}</a></h3>
+                                    <h3><a href="{!!url('chi-tiet-san-pham',[$item->id])!!}">{!!$item->name!!}</a></h3>
                                     <p class="price">{!!number_format($item->price,0,',','.')!!} VND</p>
                                 </div>
                                 <!-- /.text -->

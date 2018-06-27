@@ -45,5 +45,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('loai_san_pham/{id}/{tenloai}',['as'=>'loaisanpham','uses'=>'WelcomeController@loaisanpham']);
-Route::get('chi-tiet-san-pham/{id}/{tenloai}',['as'=>'chitietsanpham','uses'=>'WelcomeController@chitietsanpham']);
+Route::get('loai_san_pham/{id}',['as'=>'loaisanpham','uses'=>'WelcomeController@loaisanpham']);
+Route::get('chi-tiet-san-pham/{id}',['as'=>'chitietsanpham','uses'=>'WelcomeController@chitietsanpham']);

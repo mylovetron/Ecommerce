@@ -31,7 +31,7 @@
                         $active="active";
                 ?>
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Trang chủ</a>
+                    <li class="active"><a href="{!!url('/') !!}">Trang chủ</a>
                     </li>
                     @foreach($menu_level1 as $item_level1)
                     <li class="dropdown yamm-fw">
@@ -46,6 +46,7 @@
                                         @foreach($menu_level2 as $item_level2)
                                         <div class="col-sm-3">
                                             <h5>{!!$item_level2->name!!}</h5>
+                                            <!--
                                             <ul>
                                                 <li><a href="category.html">dang mục sản phẩm 1</a>
                                                 </li>
@@ -56,6 +57,7 @@
                                                 <li><a href="category.html">dang mục sản phẩm 4</a>
                                                 </li>
                                             </ul>
+                                            -->
                                         </div>
                                         @endforeach
                                     </div>

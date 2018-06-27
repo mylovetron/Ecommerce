@@ -7,8 +7,10 @@ use DB;
 class WelcomeController extends Controller
 {
     public function index(){
-    	$product =DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->skip(0)->take(4)->get();
+    	$product =DB::table('products')->select('id','name','image','price','alias','intro')->orderBy('id','DESC')->skip(0)->take(4)->get();
         //return view('user.pages.products',compact('product'));
+       
+
         return view('user2.pages.index',compact('product'));
         //return view('user2.test',compact('product'));
 
@@ -27,7 +29,14 @@ class WelcomeController extends Controller
     public function chitietsanpham($id){
        $product_detail=DB::table('products')->where('id',$id)->first();
        $image=DB::table('product_images')->select('id','image')->where('product_id',$product_detail->id)->get();
+
+       //Lay 3 san pham lien quan
        $product_cate=DB::table('products')->where('cate_id',$product_detail->cate_id)->where('id','<>',$id)->take(3)->get();
-       return view('user2.pages.detail',compact('product_detail','image','product_cate'));
+
+       //menu detail
+       $cate=DB::table('cates')->select('parent_id','name')->where('id',$product_detail->cate_id)->first();
+
+       $menu_cate=DB::table('cates')->select('id','name','alias')->where('parent_id',$cate->parent_id)->get();
+       return view('user2.pages.detail',compact('product_detail','image','product_cate','menu_cate'));
     }
 }

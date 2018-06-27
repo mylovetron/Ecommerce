@@ -9,18 +9,19 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li><a href="#">Trang chủ</a>
                         </li>
-                        <li><a href="#">Ladies</a>
+                        <li><a href="#">Thiết bị</a>
                         </li>
-                        <li><a href="#">Tops</a>
+                        <li><a href="#">Sản phẩm</a>
                         </li>
-                        <li>White Blouse Armani</li>
+                        <li></li>
                     </ul>
 
                 </div>
 
                 <div class="col-md-3">
+
                     <!-- *** MENUS AND FILTERS ***
  _________________________________________________________ -->
                     <div class="panel panel-default sidebar-menu">
@@ -29,24 +30,24 @@
                             <h3 class="panel-title">Categories</h3>
                         </div>
 
-                        <div class="panel-body">
+                        <div class="panel-body"> 
+                            <?php 
+                                $active='';
+                            ?>
+                            @foreach($menu_cate as $item_menu_cate)
+                                <?php
+                                    if($item_menu_cate->id==$product_detail->cate_id) 
+                                        $active='active';
+                                    else
+                                        $active='';
+                                ?>
+                               
                             <ul class="nav nav-pills nav-stacked category-menu">
-                                <li>
-                                    <a href="category.html">Men <span class="badge pull-right">42</span></a>
+                                <li class="{!! $active !!}">
+                                   
+                                    <a href="category.html">{!! $item_menu_cate->name !!}<span class="badge pull-right"></span></a>
                                     <ul>
-                                        <li><a href="category.html">T-shirts</a>
-                                        </li>
-                                        <li><a href="category.html">Shirts</a>
-                                        </li>
-                                        <li><a href="category.html">Pants</a>
-                                        </li>
-                                        <li><a href="category.html">Accessories</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="active">
-                                    <a href="category.html">Ladies  <span class="badge pull-right">123</span></a>
-                                    <ul>
+                                        <!--
                                         <li><a href="category.html">T-shirts</a>
                                         </li>
                                         <li><a href="category.html">Skirts</a>
@@ -55,117 +56,24 @@
                                         </li>
                                         <li><a href="category.html">Accessories</a>
                                         </li>
+                                        -->
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="category.html">Kids  <span class="badge pull-right">11</span></a>
-                                    <ul>
-                                        <li><a href="category.html">T-shirts</a>
-                                        </li>
-                                        <li><a href="category.html">Skirts</a>
-                                        </li>
-                                        <li><a href="category.html">Pants</a>
-                                        </li>
-                                        <li><a href="category.html">Accessories</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
+                               
                             </ul>
-
+                            @endforeach
                         </div>
                     </div>
-
-                    <div class="panel panel-default sidebar-menu">
-
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Brands <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
-                        </div>
-
-                        <div class="panel-body">
-
-                            <form>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">Armani (10)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">Versace (12)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">Carlo Bruni (15)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">Jack Honey (14)
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
-
-                            </form>
-
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default sidebar-menu">
-
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Colours <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
-                        </div>
-
-                        <div class="panel-body">
-
-                            <form>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> <span class="colour white"></span> White (14)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> <span class="colour blue"></span> Blue (10)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> <span class="colour green"></span> Green (20)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> <span class="colour yellow"></span> Yellow (13)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> <span class="colour red"></span> Red (10)
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
-
-                            </form>
-
-                        </div>
-                    </div>
+                   
 
                     <!-- *** MENUS AND FILTERS END *** -->
-
+                    <!-- Quang Cao 
                     <div class="banner">
                         <a href="#">
                             <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
                         </a>
                     </div>
+                    // Quang Cao -->
                 </div>
 
                 <div class="col-md-9">
@@ -219,7 +127,7 @@
 
 
                     <div class="box" id="details">
-                        {!!$product_detail->intro!!}
+                        {!!$product_detail->content!!}
                     </div>
 
                     <div class="row same-height-row">
@@ -235,18 +143,18 @@
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
-                                            <a href="detail.html">
+                                            <a href="{!!url('chi-tiet-san-pham',[$item_product_cate->id])!!}">
                                                 <img src="{!!asset('resources/upload/'.$item_product_cate->image)!!}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="back">
-                                            <a href="detail.html">
+                                            <a href="{!!url('chi-tiet-san-pham',[$item_product_cate->id])!!}">
                                                 <img src="{!!asset('resources/upload/'.$item_product_cate->image)!!}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="detail.html" class="invisible">
+                                <a href="{!!url('chi-tiet-san-pham',[$item_product_cate->id])!!}" class="invisible">
                                     <img src="{!!asset('resources/upload/'.$item_product_cate->image)!!}" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
@@ -274,18 +182,18 @@
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
-                                            <a href="detail.html">
+                                            <a href="{!!url('chi-tiet-san-pham',[$item_product_cate->id])!!}">
                                                 <img src="{!!asset('resources/upload/'.$item_product_cate->image)!!}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="back">
-                                            <a href="detail.html">
+                                            <a href="{!!url('chi-tiet-san-pham',[$item_product_cate->id])!!}">
                                                 <img src="{!!asset('resources/upload/'.$item_product_cate->image)!!}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="detail.html" class="invisible">
+                                <a href="{!!url('chi-tiet-san-pham',[$item_product_cate->id])!!}" class="invisible">
                                     <img src="{!!asset('resources/upload/'.$item_product_cate->image)!!}" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
