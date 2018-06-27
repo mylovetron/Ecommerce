@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use DB,Cart;
 class WelcomeController extends Controller
 {
     public function index(){
@@ -38,5 +38,20 @@ class WelcomeController extends Controller
 
        $menu_cate=DB::table('cates')->select('id','name','alias')->where('parent_id',$cate->parent_id)->get();
        return view('user2.pages.detail',compact('product_detail','image','product_cate','menu_cate'));
+    }
+
+    public function muahang($id){
+        $product_buy=DB::table('products')->where('id',$id)->first();
+        //Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,['img'=>$product_buy->image]));
+        Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options'=>$product_buy->image));
+        $content=Cart::content();
+        //print_r($content);
+        return redirect()->route('giohang');
+    }
+
+    public function giohang(){
+        $content=Cart::content();
+        $total=Cart::total();
+        return view('user2.pages.basket',compact('content','total'));
     }
 }

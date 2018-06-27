@@ -28,3 +28,6 @@ php artisan make:request CateRequest
 ----------------------------------------------------------
 thay doi lenh php composer.phar dump-autoload
 banh lenh composer update
+------------------------------------------------------------------
+shopping card
+composer require gloudemans/shoppingcart
