@@ -47,3 +47,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('loai_san_pham/{id}',['as'=>'loaisanpham','uses'=>'WelcomeController@loaisanpham']);
 Route::get('chi-tiet-san-pham/{id}',['as'=>'chitietsanpham','uses'=>'WelcomeController@chitietsanpham']);
+Route::get('mua-hang/{id}/{tensanpham}',['as'=>'muahang','uses'=>'WelcomeController@muahang']);
