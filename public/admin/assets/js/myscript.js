@@ -1,4 +1,4 @@
-alert(111);
+
 
 $(document).ready(function(){
 	$("#addImages").click(function(){
