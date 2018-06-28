@@ -60,6 +60,8 @@
     <script src="{{url('user/obaju/js/owl.carousel.min.js')}}"></script>
     <script src="{{url('user/obaju/js/front.js')}}"></script>
 
+    <!-- my script -->
+    <script src="{{ url('admin/js/myscript.js')}}"></script>
 
 </body>
 

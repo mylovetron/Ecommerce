@@ -1,10 +1,12 @@
-$("div.alert").delay(3000).slideUp();
+alert(111);
 
 $(document).ready(function(){
 	$("#addImages").click(function(){
 		$("#insert").append('<div class="form-group"><input type="file" name="fEitDetail[]" class="col-xs-10 col-sm-5" /></div>');
 	});
 });
+
+$("div.alert").delay(3000).slideUp();
 
 $(document).ready(function(){
 	$("a#del_img_demo").on('click',function(){

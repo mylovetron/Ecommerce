@@ -74,6 +74,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         });
 </script>  
 <!-- //cart-js -->  
- 
+<!-- my script -->
+<script src="{{ url('admin/js/myscript.js')}}"></script>
 
 </html>

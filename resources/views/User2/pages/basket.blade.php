@@ -50,8 +50,10 @@
                                             <td>{!!number_format($item->price,0,',','.')!!} VND</td>
                                             <td>$0.00</td>
                                             <td>{!!number_format($item->price*$item->qty,0,',','.')!!} VND</td>
-                                            <td><a href="{!!url('xoa-san-pham',$item->rowId) !!}"><i class="fa fa-trash-o"></i></a>
+                                           
+                                            <td><a href=""><i class="fa fa-refresh"></i></a><a href="{!!url('xoa-san-pham',$item->rowId) !!}"><i class="fa fa-trash-o"></i></a>
                                             </td>
+
                                         </tr>
                                         @endforeach
                                     </tbody>

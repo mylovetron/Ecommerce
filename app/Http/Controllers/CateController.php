@@ -29,7 +29,7 @@ class CateController extends Controller
         $cate->description=$request->txtDescription;
         $cate->save();
         //print_r($cate);
-        //return redirect()->route('admin.pages.cate_list')->with(['flash_level'=>'success','flash_message'=>'add categoy sussec!']);
+        return redirect()->route('admin.cate.getList')->with(['flash_level'=>'success','flash_message'=>'Thêm category thành công!']);
     }
 
     public  function getDelete($id)

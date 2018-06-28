@@ -121,5 +121,5 @@
 <!-- PAGE CONTENT ENDS -->
 	</div><!-- /.col -->
 </div><!-- /.row -->
-<script type="text/javascript" src="{{url('admin/assets/js/myscript.js')}}"></script>				
+				
 @endsection
