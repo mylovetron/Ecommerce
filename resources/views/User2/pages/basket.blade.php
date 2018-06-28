@@ -20,16 +20,16 @@
 
                         <form method="post" action="checkout1.html">
 
-                            <h1>Shopping cart</h1>
-                            <p class="text-muted">You currently have 3 item(s) in your cart.</p>
+                            <h1>Giỏ hàng</h1>
+                            <p class="text-muted">Có (3) sản phẩm</p>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th colspan="2">Product</th>
-                                            <th>Quantity</th>
-                                            <th>Unit price</th>
-                                            <th>Discount</th>
+                                            <th colspan="2">Sản phẩm</th>
+                                            <th>Số lượng</th>
+                                            <th>Đơn giá</th>
+                                            <th>Giảm giá</th>
                                             <th colspan="2">Total</th>
                                         </tr>
                                     </thead>
@@ -38,7 +38,8 @@
                                         <tr>
                                             <td>
                                                 <a href="#">
-                                                    <img src="{!! asset('resources/upload/'.$item->options) !!}" alt="">
+
+                                                    <img src="{!! asset('resources/upload/'.$item->options->img) !!}" alt="">
                                                 </a>
                                             </td>
                                             <td><a href="#">{!!$item->name!!}</a>
@@ -49,15 +50,15 @@
                                             <td>{!!number_format($item->price,0,',','.')!!} VND</td>
                                             <td>$0.00</td>
                                             <td>{!!number_format($item->price*$item->qty,0,',','.')!!} VND</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
+                                            <td><a href="{!!url('xoa-san-pham',$item->rowId) !!}"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th colspan="5">Total</th>
-                                            <th colspan="2">{!!($total)!!} VND</th>
+                                            <th colspan="5">Tổng cộng</th>
+                                            <th colspan="2">{!!($subtotal)!!} VND</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -67,11 +68,11 @@
 
                             <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                                    <a href="category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Tiếp tục mua hàng</a>
                                 </div>
                                 <div class="pull-right">
-                                    <button class="btn btn-default"><i class="fa fa-refresh"></i> Update basket</button>
-                                    <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i>
+                                    <button class="btn btn-default"><i class="fa fa-refresh"></i> Cập nhật giỏ hàng</button>
+                                    <button type="submit" class="btn btn-primary">Thanh toán <i class="fa fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>
@@ -181,7 +182,7 @@
                 <div class="col-md-3">
                     <div class="box" id="order-summary">
                         <div class="box-header">
-                            <h3>Order summary</h3>
+                            <h3>Thông tin đơn hàng</h3>
                         </div>
                         <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
 
@@ -189,20 +190,20 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td>Order subtotal</td>
-                                        <th>$446.00</th>
+                                        <td>Tạm tính</td>
+                                        <th>{!!($total)!!} VND</th>
                                     </tr>
                                     <tr>
-                                        <td>Shipping and handling</td>
+                                        <td>Phí giao hàng</td>
                                         <th>$10.00</th>
                                     </tr>
                                     <tr>
-                                        <td>Tax</td>
+                                        <td>Thuế VAT</td>
                                         <th>$0.00</th>
                                     </tr>
                                     <tr class="total">
-                                        <td>Total</td>
-                                        <th>$456.00</th>
+                                        <td>Tổng cộng</td>
+                                        <th>{!!($total)!!} VND</th>
                                     </tr>
                                 </tbody>
                             </table>

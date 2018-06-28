@@ -49,3 +49,4 @@ Route::get('loai_san_pham/{id}',['as'=>'loaisanpham','uses'=>'WelcomeController@
 Route::get('chi-tiet-san-pham/{id}',['as'=>'chitietsanpham','uses'=>'WelcomeController@chitietsanpham']);
 Route::get('mua-hang/{id}',['as'=>'muahang','uses'=>'WelcomeController@muahang']);
 Route::get('gio-hang',['as'=>'giohang','uses'=>'WelcomeController@giohang']);
+Route::get('xoa-san-pham/{id}',['as'=>'xoasanpham','uses'=>'WelcomeController@xoasanpham']);

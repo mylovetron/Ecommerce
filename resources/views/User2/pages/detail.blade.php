@@ -105,8 +105,8 @@
                                 <p class="price">{!!number_format($product_detail->price,0,',','.')!!} VND</p>
 
                                 <p class="text-center buttons">
-                                    <a href="{!!url('mua-hang',[$product_detail->id])!!}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
-                                    <a href="{!!url('mua-hang',[$product_detail->id])!!}" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
+                                    <a href="{!!url('mua-hang',[$product_detail->id])!!}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a> 
+                                    <a href="{!!url('mua-hang',[$product_detail->id])!!}" class="btn btn-default"><i class="fa fa-heart"></i> Yêu thích</a>
                                 </p>
 
 

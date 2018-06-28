@@ -42,8 +42,8 @@ class WelcomeController extends Controller
 
     public function muahang($id){
         $product_buy=DB::table('products')->where('id',$id)->first();
-        //Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,['img'=>$product_buy->image]));
-        Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options'=>$product_buy->image));
+        Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options' => (['img'=>$product_buy->image])));
+        //Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options'=>$product_buy->image));
         $content=Cart::content();
         //print_r($content);
         return redirect()->route('giohang');
@@ -51,7 +51,15 @@ class WelcomeController extends Controller
 
     public function giohang(){
         $content=Cart::content();
+        $subtotal=Cart::subtotal();
         $total=Cart::total();
-        return view('user2.pages.basket',compact('content','total'));
+        //print_r($content);
+        return view('user2.pages.basket',compact('content','total','subtotal'));
+    }
+
+    public function xoasanpham($id){
+      Cart::remove($id);
+
+      return redirect()->route('giohang');
     }
 }
