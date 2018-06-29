@@ -50,3 +50,4 @@ Route::get('chi-tiet-san-pham/{id}',['as'=>'chitietsanpham','uses'=>'WelcomeCont
 Route::get('mua-hang/{id}',['as'=>'muahang','uses'=>'WelcomeController@muahang']);
 Route::get('gio-hang',['as'=>'giohang','uses'=>'WelcomeController@giohang']);
 Route::get('xoa-san-pham/{id}',['as'=>'xoasanpham','uses'=>'WelcomeController@xoasanpham']);
+Route::get('cap-nhat/{id}/{qty}',['as'=>'capnhat','uses'=>'WelcomeController@capnhat']);

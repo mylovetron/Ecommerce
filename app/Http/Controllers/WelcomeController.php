@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use DB,Cart;
+use Request;
 class WelcomeController extends Controller
 {
     public function index(){
@@ -61,5 +62,14 @@ class WelcomeController extends Controller
       Cart::remove($id);
 
       return redirect()->route('giohang');
+    }
+
+    public function capnhat(){
+      if(Request::ajax()){
+        $id=Request::get('id');
+        $qty=Request::get('qty');
+        Cart::update($id,$qty);
+        echo "oke";
+      }
     }
 }

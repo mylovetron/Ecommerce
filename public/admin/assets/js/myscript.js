@@ -1,5 +1,4 @@
 
-
 $(document).ready(function(){
 	$("#addImages").click(function(){
 		$("#insert").append('<div class="form-group"><input type="file" name="fEitDetail[]" class="col-xs-10 col-sm-5" /></div>');
@@ -29,4 +28,7 @@ $(document).ready(function(){
 			}
 		})
 	})
+
+	
+
 });
