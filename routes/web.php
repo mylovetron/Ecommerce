@@ -51,3 +51,4 @@ Route::get('mua-hang/{id}',['as'=>'muahang','uses'=>'WelcomeController@muahang']
 Route::get('gio-hang',['as'=>'giohang','uses'=>'WelcomeController@giohang']);
 Route::get('xoa-san-pham/{id}',['as'=>'xoasanpham','uses'=>'WelcomeController@xoasanpham']);
 Route::get('cap-nhat/{id}/{qty}',['as'=>'capnhat','uses'=>'WelcomeController@capnhat']);
+Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'WelcomeController@getcheckout']);

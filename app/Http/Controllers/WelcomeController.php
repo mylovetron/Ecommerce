@@ -72,4 +72,24 @@ class WelcomeController extends Controller
         echo "oke";
       }
     }
+
+    public function getcheckout(){
+      return view('user2.pages.checkout1');
+    }
+
+    public function postcheckout(){
+      $customer=new Customer;
+      $customer->name=$request->name;
+      //$customer->gender=$request->gender;
+      $customer->name=$request->email;
+      $customer->name=$request->address;
+      $customer->name=$request->phone;
+      //$customer->name=$request->notes;
+      $customer->save();
+
+
+
+
+
+    }
 }

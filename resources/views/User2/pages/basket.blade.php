@@ -18,7 +18,7 @@
 
                     <div class="box">
 
-                        <form method="post" action="checkout1.html">
+                        <form method="post" action="">
 
                             <h1>Giỏ hàng</h1>
                             <p class="text-muted">Có (3) sản phẩm</p>
@@ -77,9 +77,11 @@
                                 </div>
                                 <div class="pull-right">
                                     <!--
-                                    <button class="btn btn-default"><i class="fa fa-refresh"></i> Cập nhật giỏ hàng</button> -->
-                                    <button type="submit" class="btn btn-primary">Thanh toán <i class="fa fa-chevron-right"></i>
-                                    </button>
+                                    <button class="btn btn-default"><i class="fa fa-refresh"></i> Cập nhật giỏ hàng</button>
+                                    <button type="submit" class="btn btn-primary">Thanh toán <i class="fa fa-chevron-right"></i></button> -->
+                                    <a href="{!!url('thanh-toan')!!}" class="btn btn-primary">Mua hàng<i class="fa fa-chevron-right"></i> </a>
+                                        
+                                    
                                 </div>
                             </div>
 
