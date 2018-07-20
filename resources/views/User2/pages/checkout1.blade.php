@@ -16,7 +16,8 @@
                 <div class="col-md-9" id="checkout">
 
                     <div class="box">
-                        <form method="post" action="checkout2.html">
+                        <form method="post" action="{!! route('dathang') !!}">
+                            <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
                             <h1>Thông tin khách hàng</h1>
                             <ul class="nav nav-pills nav-justified">
                                 <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>Địa chỉ</a>

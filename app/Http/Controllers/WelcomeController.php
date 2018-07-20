@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use Illuminate\Http\Request;
 use DB,Cart;
 use Request;
+use App\Customer;
 class WelcomeController extends Controller
 {
     public function index(){
@@ -77,16 +78,16 @@ class WelcomeController extends Controller
       return view('user2.pages.checkout1');
     }
 
-    public function postcheckout(){
+    public function postcheckout(Request $request){
       $customer=new Customer;
-      $customer->name=$request->name;
-      //$customer->gender=$request->gender;
-      $customer->name=$request->email;
-      $customer->name=$request->address;
-      $customer->name=$request->phone;
-      //$customer->name=$request->notes;
+      $customer->name=Request::input('name');
+      $customer->email=Request::input('email');
+      $customer->address=Request::input('address');
+      $customer->phone_number=Request::input('phone');
+      $customer->note="note";
+      $customer->gender="no";
+      
       $customer->save();
-
 
 
 

@@ -79,7 +79,7 @@
                                     <!--
                                     <button class="btn btn-default"><i class="fa fa-refresh"></i> Cập nhật giỏ hàng</button>
                                     <button type="submit" class="btn btn-primary">Thanh toán <i class="fa fa-chevron-right"></i></button> -->
-                                    <a href="{!!url('thanh-toan')!!}" class="btn btn-primary">Mua hàng<i class="fa fa-chevron-right"></i> </a>
+                                    <a href="{!!url('dat-hang')!!}" class="btn btn-primary">Mua hàng<i class="fa fa-chevron-right"></i> </a>
                                         
                                     
                                 </div>
