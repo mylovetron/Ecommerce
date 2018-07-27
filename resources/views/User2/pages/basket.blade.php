@@ -63,7 +63,7 @@
                                     <tfoot>
                                         <tr>
                                             <th colspan="5">Tổng cộng</th>
-                                            <th colspan="2">{!!($subtotal)!!} VND</th>
+                                            <th colspan="2">{!! number_format($subtotal,0,'.','.')!!} VND</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -112,19 +112,19 @@
                                 <tbody>
                                     <tr>
                                         <td>Tạm tính</td>
-                                        <th>{!!($total)!!} VND</th>
+                                        <th>{!!number_format($subtotal,0,'.','.')!!} VND</th>
                                     </tr>
                                     <tr>
                                         <td>Phí giao hàng</td>
-                                        <th>$10.00</th>
+                                        <th>0.00VND</th>
                                     </tr>
                                     <tr>
                                         <td>Thuế VAT</td>
-                                        <th>$0.00</th>
+                                        <th>{!!number_format($tax,0,'.','.')!!} VND</th>
                                     </tr>
                                     <tr class="total">
                                         <td>Tổng cộng</td>
-                                        <th>{!!($total)!!} VND</th>
+                                        <th>{!!number_format($total,0,'.','.')!!}  VND</th>
                                     </tr>
                                 </tbody>
                             </table>

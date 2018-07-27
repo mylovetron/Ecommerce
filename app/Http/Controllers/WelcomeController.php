@@ -6,6 +6,10 @@ namespace App\Http\Controllers;
 use DB,Cart;
 use Request;
 use App\Customer;
+use App\Bill;
+use App\Bill_detail;
+use Session;
+use Config;
 class WelcomeController extends Controller
 {
     public function index(){
@@ -43,8 +47,9 @@ class WelcomeController extends Controller
     }
 
     public function muahang($id){
+        $delivery=0;
         $product_buy=DB::table('products')->where('id',$id)->first();
-        Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options' => (['img'=>$product_buy->image])));
+        Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options' => (['img'=>$product_buy->image,'delivery'=>$delivery])));
         //Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options'=>$product_buy->image));
         $content=Cart::content();
         //print_r($content);
@@ -53,10 +58,11 @@ class WelcomeController extends Controller
 
     public function giohang(){
         $content=Cart::content();
-        $subtotal=Cart::subtotal();
-        $total=Cart::total();
+        $subtotal=Cart::subtotal(0,',','');
+        $tax=$subtotal*config::get('constants.TAX');
+        $total=$subtotal*config::get('constants.TAX')+$subtotal;
         //print_r($content);
-        return view('user2.pages.basket',compact('content','total','subtotal'));
+        return view('user2.pages.basket',compact('content','total','subtotal','tax'));
     }
 
     public function xoasanpham($id){
@@ -79,6 +85,9 @@ class WelcomeController extends Controller
     }
 
     public function postcheckout(Request $request){
+      
+      $cart=Session::get('cart');
+      //dd($cart);
       $customer=new Customer;
       $customer->name=Request::input('name');
       $customer->email=Request::input('email');
@@ -86,9 +95,28 @@ class WelcomeController extends Controller
       $customer->phone_number=Request::input('phone');
       $customer->note="note";
       $customer->gender="no";
-      
-      $customer->save();
+      //$customer->save();
 
+      $bill=new bill;
+      $bill->id_customer=$customer->id;
+      $bill->date_order=date('Y-m-d');
+      $bill->total= config::get('constants.TAX')*Cart::subtotal(0,',','')+Cart::subtotal(0,',','');
+      $bill->payment="payment";
+      $bill->note="note";
+      //$bill->save();
+
+      foreach ($cart['items'] as $key => $value) {
+        $bill_detail=new Bill_detail;
+        $bill_detail->id_bill=$bill->id;
+        $bill_detail->id_product=$key;
+        $bill_detail->quantity=$value['qty'];
+        $bill_detail->unit_price=($value['price']/$value ['qty']);
+        //$bill_detail->save();
+        print_r($bill_detail);
+
+      }
+     // Session::forget('cart');
+      //return redirect()->back()->with('thongbao','Đặt hàng thành công');
 
 
 
