@@ -95,7 +95,7 @@ class WelcomeController extends Controller
       $customer->phone_number=Request::input('phone');
       $customer->note="note";
       $customer->gender="no";
-      //$customer->save();
+      $customer->save();
 
       $bill=new bill;
       $bill->id_customer=$customer->id;
@@ -103,20 +103,20 @@ class WelcomeController extends Controller
       $bill->total= config::get('constants.TAX')*Cart::subtotal(0,',','')+Cart::subtotal(0,',','');
       $bill->payment="payment";
       $bill->note="note";
-      //$bill->save();
+      $bill->save();
 
-      foreach ($cart['items'] as $key => $value) {
+      foreach (Cart::content() as $value) {
         $bill_detail=new Bill_detail;
         $bill_detail->id_bill=$bill->id;
-        $bill_detail->id_product=$key;
-        $bill_detail->quantity=$value['qty'];
-        $bill_detail->unit_price=($value['price']/$value ['qty']);
-        //$bill_detail->save();
-        print_r($bill_detail);
+        $bill_detail->id_product=$value->id;
+        $bill_detail->quantity=$value->qty;
+        $bill_detail->unit_price=($value->price/$value->qty);
+        $bill_detail->save();
+        //print_r($bill_detail);
 
       }
-     // Session::forget('cart');
-      //return redirect()->back()->with('thongbao','Đặt hàng thành công');
+      Session::forget('cart');
+      return redirect()->back()->with('thongbao','Đặt hàng thành công');
 
 
 
