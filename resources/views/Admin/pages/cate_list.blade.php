@@ -78,25 +78,29 @@
                     </td>
                     
                     <td class="hidden-480">
-                        <span class="label label-sm label-warning">Expiring</span>
+                        <span class="label label-sm label-warning">active</span>
                     </td>
 
                     <td>
                         <div class="hidden-sm hidden-xs btn-group">
+                            
+                            <!--
                             <button class="btn btn-xs btn-success">
                                 <i class="ace-icon fa fa-check bigger-120"></i>
                             </button>
-
+                            -->
                             <a class="btn btn-xs btn-info" href="{!! URL::route('admin.cate.getEdit',$item['id']) !!}">
                                 <i class="ace-icon fa fa-pencil bigger-120"></i>
                             </a>
-                            <a href="{!! URL::route('admin.cate.getDelete',$item['id']) !!}" onclick="return confirm('Ban chac co muon xoa?')" class="btn btn-xs btn-danger" >
+                            <a href="{!! URL::route('admin.cate.getDelete',$item['id']) !!}" onclick="return confirm('Bạn thực sự muốn xóa danh mục này?')" class="btn btn-xs btn-danger" >
                                     <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                
                             </a>
+
+                            <!--
                             <button class="btn btn-xs btn-warning">
                                 <i class="ace-icon fa fa-flag bigger-120"></i>
-                            </button>
+                            </button> -->
                         </div>
 
                         <div class="hidden-md hidden-lg">

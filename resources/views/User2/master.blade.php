@@ -52,6 +52,8 @@
  <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
     <script src="{{url('user/obaju/js/jquery-1.11.0.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('user/obaju/js/myscript.js')}}"></script>
+    <!-- /Myscript -->
     <script src="{{url('user/obaju/js/bootstrap.min.js')}}"></script>
     <script src="{{url('user/obaju/js/jquery.cookie.js')}}"></script>
     <script src="{{url('user/obaju/js/waypoints.min.js')}}"></script>
@@ -59,9 +61,8 @@
     <script src="{{url('user/obaju/js/bootstrap-hover-dropdown.js')}}"></script>
     <script src="{{url('user/obaju/js/owl.carousel.min.js')}}"></script>
     <script src="{{url('user/obaju/js/front.js')}}"></script>
-
     <!-- my script -->
-    <script src="{{ url('admin/js/myscript.js')}}"></script>
+    
 
 </body>
 

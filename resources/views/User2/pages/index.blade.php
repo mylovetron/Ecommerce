@@ -91,6 +91,7 @@
                     @endforeach
                       
                     </div>
+                    <div class="product-slider">{!!$product->links()!!}</div>
                     <!-- /.product-slider -->
                 </div>
 

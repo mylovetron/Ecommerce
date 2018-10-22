@@ -10,11 +10,11 @@
                         <ul>
                             <li><a href="text.html">About us</a>
                             </li>
-                            <li><a href="text.html">Terms and conditions</a>
+                            <li><a href="text.html">Điều kiện và chính sách</a>
                             </li>
-                            <li><a href="faq.html">FAQ</a>
+                            <li><a href="faq.html">Hỏi đáp</a>
                             </li>
-                            <li><a href="contact.html">Contact us</a>
+                            <li><a href="contact.html">Gủi mail</a>
                             </li>
                         </ul>
 
@@ -22,11 +22,11 @@
                     </div>
                     <!-- /.col-md-3 -->
                     <div class="col-md-3 col-sm-6">
-                        <h4>User section</h4>
+                        <h4>Khách hàng</h4>
                         <ul>
-                            <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                            <li><a href="#" data-toggle="modal" data-target="#login-modal">Đăng nhập</a>
                             </li>
-                            <li><a href="register.html">Regiter</a>
+                            <li><a href="register.html">Đăng ký</a>
                             </li>
                             </ul>
 

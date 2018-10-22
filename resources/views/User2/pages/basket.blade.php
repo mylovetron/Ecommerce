@@ -8,9 +8,9 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li><a href="">Trang chủ</a>
                         </li>
-                        <li>Shopping cart</li>
+                        <li>Giỏ hàng</li>
                     </ul>
                 </div>
 
@@ -18,7 +18,7 @@
 
                     <div class="box">
 
-                        <form method="post" action="checkout1.html">
+                        <form method="post" action="">
 
                             <h1>Giỏ hàng</h1>
                             <p class="text-muted">Có (3) sản phẩm</p>
@@ -34,6 +34,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <form>
+                                        <input name="_token" type="hidden" value="{!! csrf_token() !!}" ></input>
                                         @foreach($content as $item)
                                         <tr>
                                             <td>
@@ -45,22 +47,23 @@
                                             <td><a href="#">{!!$item->name!!}</a>
                                             </td>
                                             <td>
-                                                <input type="number" value='{!!$item->qty!!}' class="form-control">
+                                                <input type="number" value='{!!$item->qty!!}' class="form-control qty" />
                                             </td>
                                             <td>{!!number_format($item->price,0,',','.')!!} VND</td>
                                             <td>$0.00</td>
                                             <td>{!!number_format($item->price*$item->qty,0,',','.')!!} VND</td>
                                            
-                                            <td><a href=""><i class="fa fa-refresh"></i></a><a href="{!!url('xoa-san-pham',$item->rowId) !!}"><i class="fa fa-trash-o"></i></a>
+                                            <td><a href="" class="updatecart" id="{!!$item->rowId!!}"><i class="fa fa-refresh"></i></a><a href="{!!url('xoa-san-pham',$item->rowId) !!}"><i class="fa fa-trash-o"></i></a>
                                             </td>
 
                                         </tr>
                                         @endforeach
+                                        </form>
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <th colspan="5">Tổng cộng</th>
-                                            <th colspan="2">{!!($subtotal)!!} VND</th>
+                                            <th colspan="2">{!! number_format($subtotal,0,'.','.')!!} VND</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -73,9 +76,12 @@
                                     <a href="category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Tiếp tục mua hàng</a>
                                 </div>
                                 <div class="pull-right">
+                                    <!--
                                     <button class="btn btn-default"><i class="fa fa-refresh"></i> Cập nhật giỏ hàng</button>
-                                    <button type="submit" class="btn btn-primary">Thanh toán <i class="fa fa-chevron-right"></i>
-                                    </button>
+                                    <button type="submit" class="btn btn-primary">Thanh toán <i class="fa fa-chevron-right"></i></button> -->
+                                    <a href="{!!url('dat-hang')!!}" class="btn btn-primary">Mua hàng<i class="fa fa-chevron-right"></i> </a>
+                                        
+                                    
                                 </div>
                             </div>
 
@@ -86,95 +92,8 @@
 
 
                     <div class="row same-height-row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="box same-height">
-                                <h3>You may also like these products</h3>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="product same-height">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product2_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product2.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>Fur coat</h3>
-                                    <p class="price">$143</p>
-                                </div>
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="product same-height">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product1_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product1.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>Fur coat</h3>
-                                    <p class="price">$143</p>
-                                </div>
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="product same-height">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product3.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product3_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product3.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>Fur coat</h3>
-                                    <p class="price">$143</p>
-
-                                </div>
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
+                        <!-- Goi y san pham
+                        -->
                     </div>
 
 
@@ -186,26 +105,26 @@
                         <div class="box-header">
                             <h3>Thông tin đơn hàng</h3>
                         </div>
-                        <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
+                        <p class="text-muted">Phí vận chuyển có thể thay đổi tùy theo khu vực</p>
 
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
                                     <tr>
                                         <td>Tạm tính</td>
-                                        <th>{!!($total)!!} VND</th>
+                                        <th>{!!number_format($subtotal,0,'.','.')!!} VND</th>
                                     </tr>
                                     <tr>
                                         <td>Phí giao hàng</td>
-                                        <th>$10.00</th>
+                                        <th>0.00VND</th>
                                     </tr>
                                     <tr>
                                         <td>Thuế VAT</td>
-                                        <th>$0.00</th>
+                                        <th>{!!number_format($tax,0,'.','.')!!} VND</th>
                                     </tr>
                                     <tr class="total">
                                         <td>Tổng cộng</td>
-                                        <th>{!!($total)!!} VND</th>
+                                        <th>{!!number_format($total,0,'.','.')!!}  VND</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -216,9 +135,9 @@
 
                     <div class="box">
                         <div class="box-header">
-                            <h4>Coupon code</h4>
+                            <h4>Mã giảm giá</h4>
                         </div>
-                        <p class="text-muted">If you have a coupon code, please enter it in the box below.</p>
+                        <p class="text-muted">Nếu bạn có mã giả giá, vui lòng nhập vào đây</p>
                         <form>
                             <div class="input-group">
 
