@@ -15,7 +15,12 @@
     <div class="row">
         <div class="col-xs-12">
             <div>
-                
+                @if(Session::has('flash_message'))
+                <div class="alert alert-{!!  Session::get('flash_level') !!}">
+                    {!!  Session::get('flash_message') !!}
+                </div>
+            @endif
+
             </div>
             <table id="simple-table" class="table  table-bordered table-hover">
                 <thead>
