@@ -17,7 +17,8 @@ class WelcomeController extends Controller
         //return view('user.pages.products',compact('product'));
        $product =DB::table('products')->select('id','name','image','price','alias','intro')->orderBy('id','DESC')->skip(0)->paginate(4);
 
-        return view('user2.pages.index',compact('product'));
+        //return view('user2.pages.index',compact('product'));
+       return view('auth.login');
         //return view('user2.test',compact('product'));
 
     }
