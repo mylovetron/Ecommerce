@@ -31,3 +31,12 @@ banh lenh composer update
 ------------------------------------------------------------------
 shopping card
 composer require gloudemans/shoppingcart
+
+-----------------------------------------------------------------
+push Heroku
+
+git pull origin master 
+git add . 
+git commit -am "pre-heroku" 
+git push heroku master
+
