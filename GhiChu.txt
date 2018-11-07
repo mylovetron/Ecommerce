@@ -7,9 +7,6 @@
 php artisan config:cache
 php artisan config:clear
 
-
-
-
 -----------------------------------------------
 
 Now if you want to use phpMyAdmin in Laragon please follow below steps:
@@ -40,4 +37,8 @@ git pull origin master
 git add . 
 git commit -am "pre-heroku" 
 git push heroku master
+-------------------------------------------------------------
+rename namefolder
 
+git mv old new
+------------------------------------------------------------------
